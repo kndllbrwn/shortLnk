@@ -2,10 +2,10 @@ import React from 'react'
 import { browserHistory } from 'react-router'
 
 export default class Links extends React.Component {
-  logout() {
+  logout () {
     browserHistory.push('/')
   }
-  render() {
+  render () {
     return (
       <div>
         <h1>Lnks</h1>
