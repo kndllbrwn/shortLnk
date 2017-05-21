@@ -12,9 +12,11 @@ export default class Link extends React.Component {
   onSubmit (e) {
     const url = this.refs.url.value.trim()
     e.preventDefault()
+    console.log(url)
 
     if (url) {
-      Links.insert({ url, userId: Meteor.userId() })
+      Meteor.call('links.insert', url)
+      // Links.insert({ url, userId: Meteor.userId() })
       this.refs.url.value = ''
     }
   }

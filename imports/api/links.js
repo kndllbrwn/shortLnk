@@ -10,25 +10,15 @@ if (Meteor.isServer) {
 }
 
 Meteor.methods({
-  greetUser(name) {
-    console.log('greetUser is running')
-
-    if (!name) {
-      throw new Meteor.Error('invalid-arguments', 'Name is required')
+  'links.insert'(url){
+    if (!this.userId){
+      throw new Meteor.Error('not-authorized')
     }
 
-    return `Hello ${name}!`
-  },
-
-  addNumbers(a, b) {
-    console.log('addNumbers is running')
-
-    if (typeof a === 'number' && typeof b === 'number') {
-      return a + b
-    } else {
-      throw new Meteor.Error('invalid-arguments', 'Must provide numbers')
-    }
-
+    Links.insert({
+      url,
+      userId: this.userId
+    })
   }
   
 })
