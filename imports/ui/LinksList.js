@@ -23,7 +23,6 @@ export default class LinksList extends React.Component {
     })
   }
   componentWillUnmount () {
-    console.log('byeee')
     this.linksTracker.stop()
   }
   renderLinkListItems () {
