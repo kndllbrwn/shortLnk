@@ -24,7 +24,6 @@ Meteor.methods({
         regEx: SimpleSchema.RegEx.Url
       }
     }).validate({ url })
-    
 
     Links.insert({
       _id: Shortid.generate(),
