@@ -6,6 +6,7 @@ import Signup from '../ui/Signup'
 import Link from '../ui/Link'
 import NotFound from '../ui/NotFound'
 import Login from '../ui/Login'
+import PrivateHeader from '../ui/PrivateHeader'
 
 const unauthenticatedPages = ['/', '/signup']
 const authenticatedPages = ['/links']
@@ -34,6 +35,7 @@ export const onAuthChange = (isAuthenticated) => {
 
 export const routes = (
   <Router history={browserHistory}>
+    <PrivateHeader title="Your Links"/>
     <Route path='/' component={Login} onEnter={onEnterPublicPage} />
     <Route path='/signup' component={Signup} onEnter={onEnterPublicPage} />
     <Route path='/links' component={Link} onEnter={onEnterPrivatePage} />
