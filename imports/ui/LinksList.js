@@ -2,6 +2,7 @@ import React from 'react'
 import { Meteor } from 'meteor/meteor'
 import { Tracker } from 'meteor/tracker'
 import { Session } from 'meteor/session'
+import FlipMove from 'react-flip-move'
 
 import { Links } from '../api/links'
 import LinksListItem from './LinksListItem'
@@ -42,7 +43,9 @@ export default class LinksList extends React.Component {
     return (
       <div>
         <div>
-          {this.renderLinkListItems()}
+          <FlipMove maintainContainerHeight={true}>
+            {this.renderLinkListItems()}
+          </FlipMove>
         </div>
       </div>
     )
